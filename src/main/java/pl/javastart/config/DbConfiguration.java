@@ -15,6 +15,8 @@ import pl.javastart.repository.CarRepository;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,7 +49,7 @@ public class DbConfiguration {
     @Bean
     public DataSource createDS() {
         BasicDataSource ds = new BasicDataSource();
-        ds.setUrl("jdbc:mysql://localhost:3306/test?useSSL=false");
+        ds.setUrl("jdbc:mysql://localhost:3306/test?useSSL=false&amp&characterEncoding=utf8");
         ds.setUsername("root");
         ds.setPassword("admin");
         ds.setDriverClassName("com.mysql.jdbc.Driver");
